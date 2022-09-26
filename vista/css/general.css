@@ -1,0 +1,24 @@
+
+a.enlaces:link{
+    color:gray;
+}
+
+a.enlaces:hover{
+    color:black;
+}
+
+a.enlaces:visited{
+    color:darkslategray;
+}
+
+/* COLORES VALIDACIONES */
+.has-error, .has-error .help-block {
+    color: darkred;
+}
+
+.has-success, .has-success .help-block {
+    color: darkgreen;
+}
+
+
+
