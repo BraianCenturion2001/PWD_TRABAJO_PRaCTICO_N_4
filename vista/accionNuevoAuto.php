@@ -10,13 +10,20 @@ $datosIng = data_submitted();
 if (!empty($datosIng)) {
     // Busca si ya existen los datos del dueño:
     $objPersona = $objAbmPersona->buscar(array("NroDni" => $datosIng['DniDuenio']));
+    $objAuto = $objAbmAuto->buscar(array("Patente" => $datosIng['Patente']));
+
 
     if (!empty($objPersona)) {
-        // Realiza la carga del nuevo auto, y muestra el resultado:
-        if ($objAbmAuto->alta($datosIng)) {
-            $mensaje = "<div class='alert alert-info' role='alert'><i class='fas fa-check-circle mx-2'></i> Se cargó correctamente el auto.</div>";
-        } else {
-            $mensaje = "<div class='alert alert-danger' role='alert'<i class='fas fa-times-circle mx-2'></i> Hubo un error al cargar el auto.</div>";
+        if (empty($objAuto)) {
+            // Realiza la carga del nuevo auto, y muestra el resultado:
+            if ($objAbmAuto->alta($datosIng)) {
+                $mensaje = "<div class='alert alert-info' role='alert'><i class='bi bi-check-circle mx-2'></i> Se cargó correctamente el auto.</div>";
+            } else {
+                $mensaje = "<div class='alert alert-danger' role='alert'><i class='bi bi-times-circle mx-2'></i> Hubo un error al cargar el auto.</div>";
+            }
+        }else{
+            $mensaje = "<div class='alert alert-warning' role='alert'><i class='bi bi-exclamation-circle' mx-2'><i class='bi bi-exclamation-circle mx-2'></i> Ya esta cargado un vehiculo con la patente ".$datosIng['Patente']."</b><button class='btn btn-outline-success ml-5'><a href='accionBuscarAuto.php?Patente=".$datosIng['Patente']."' style='color:black;'>Ver Auto</a></button></div>";
+
         }
     } else {
         $mensaje = "<div class='alert alert-warning' role='alert'><i class='fas fa-question-circle mx-2'></i> No existen datos de la persona con DNI " . $datosIng['DniDuenio']

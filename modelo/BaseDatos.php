@@ -12,8 +12,8 @@ private $resultado;
 
 public function __construct() {
     $this->engine = 'mysql';
-    $this->host = '127.0.0.1:3306'; //XAMMP
-    $this->database = 'tp4'; // MODIFICAR POR CADA TP
+    $this->host = '127.0.0.1:3307'; //XAMMP
+    $this->database = 'infoautos'; // MODIFICAR POR CADA TP
     $this->user = 'root';
     $this->pass = '';
     $this->debug = true;

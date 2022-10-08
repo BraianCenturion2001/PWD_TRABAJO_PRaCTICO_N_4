@@ -7,11 +7,16 @@ $objAbmPersona = new AbmPersona();
 $datosIng = data_submitted();
 
 if (!empty($datosIng)) {
+    $pers = $objAbmPersona->buscar(array("NroDni" => $datosIng['NroDni']));
     // Realiza la operación y muestra el resultado:
-    if ($objAbmPersona->alta($datosIng)) {
-        $mensaje = "<div class='alert alert-info' role='alert'><i class='fas fa-check-circle mx-2'></i> Se cargó correctamente la persona.</div>";
-    } else {
-        $mensaje = "<div class='alert alert-danger' role='alert'><i class='fas fa-times-circle mx-2'></i> Hubo un error al cargar la persona.</div>";
+    if (empty($pers)) {
+        if ($objAbmPersona->alta($datosIng)) {
+            $mensaje = "<div class='alert alert-info' role='alert'><i class='bi bi-check-circle mx-2'></i> Se cargó correctamente la persona.</div>";
+        } else {
+            $mensaje = "<div class='alert alert-danger' role='alert'><i class='bi bi-times-circle mx-2'></i> Hubo un error al cargar la persona.</div>";
+        }
+    }else{
+        $mensaje = "<div class='alert alert-danger' role='alert'><i class='bi bi-times-circle mx-2'></i> Ya hay una persona cargada con el <b>numero dni ".$datosIng['NroDni']."</b><button class='btn btn-outline-success ml-4'><a href='accionBuscarPersona.php?dni=".$datosIng['NroDni']."' style='color:black'>Ver Persona</a></button></div>";
     }
 } else {
     // Muestra error si directamente no hay datos recibidos:
