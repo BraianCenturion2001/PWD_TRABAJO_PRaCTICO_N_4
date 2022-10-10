@@ -41,11 +41,11 @@ spl_autoload_register(function ($clase) {
  * @return string
  */
 
-function MsjBody($data){
+function MsjBody($data,$motivo){
 
 
-    switch ($data['motivo']) {
-        case 'Consulta':
+    switch ($motivo) {
+        case 0:
             $body =
                 "
                     <!DOCTYPE html>
@@ -77,13 +77,14 @@ function MsjBody($data){
 
                             <body>
                                     <h1 class='card-title bg-success text-white'>Consulta</h1>
-                                    <h3 class='card-subtitle mb-2 text-muted'>{$data['nombre']}</h3>
+                                    <h3 class='card-subtitle mb-2 text-muted'>Realizada por: {$data['nombre']} {$data['apellido']}</h3>
+                                    <h3 class='card-subtitle mb-2 text-muted'>Con mail: {$data['email']}</h3>
                                     <p>{$data['comentario']}</p>
                             </body>
                         </html>
             ";
             break;
-        case 'Sugerencia':
+        case 1:
             $body = "
                 <!DOCTYPE html>
                     <html lang='en'>
@@ -114,8 +115,8 @@ function MsjBody($data){
 
                         <body>
                                 <h1 class='card-title bg-success text-white'>Consulta</h1>
-                                <h3 class='card-subtitle mb-2 text-muted'>{$data['nombre']}</h3>
-                                <p>{$data['comentario']}</p>
+                                <h3 class='card-subtitle mb-2 text-muted'>{$data['nombre']}: Gracias por enviar tu consulta, la misma sera leida y respondida en breve!</h3>
+                                
                         </body>
                     </html>
                 ";
@@ -138,11 +139,56 @@ function MsjBody($data){
 
 function EnviarMail($data){
 
-    $mail = new PHPMailer(true);
+    if($data['motivo'] = "Consulta"){
+        if (mailConsulta($data) && mailAdminConsulta($data)){
+            $exito= true;
+        } else {
+            $exito= false;
+        }
+    }
 
+    return $exito;
+}
+
+
+
+function mailAdminConsulta ($data){
+    $mail = new PHPMailer(true);
     try {
-        $mail->SMTPDebug = 0;
         $mail->isSMTP();
+        $mail->SMTPDebug = 0;
+        
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'autos.phpmailer@gmail.com';
+        $mail->Password = 'pcilpoomhtuyoeel';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port = 465;
+
+        $mail->setFrom('Autos.phpmailer@gmail.com', 'Administrador');
+        $mail->addAddress('Autos.phpmailer@gmail.com', 'Admin');
+        //$mail->addCC('lunalaureanoluna@gmail.com');Autos.phpmailer@gmail.com
+
+        $mail->isHTML(true);
+        $mail->Subject = 'Consulta de autos';
+        
+        $mail->Body = MsjBody($data,0);
+
+        $mail->send();
+        $exito = true;
+       
+    } catch (Exception $e) {
+    $exito = false;
+    }
+    return $exito;
+}
+
+function mailConsulta ($data){
+    $mail = new PHPMailer(true);
+    try {
+        $mail->isSMTP();
+        $mail->SMTPDebug = 0;
+        
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'autos.phpmailer@gmail.com';
@@ -155,33 +201,15 @@ function EnviarMail($data){
         //$mail->addCC('lunalaureanoluna@gmail.com');
 
         $mail->isHTML(true);
-        $mail->Subject = 'Este es un mail de prueba';
+        $mail->Subject = 'Consulta de autos';
         
-        $mail->Body = MsjBody($data);
+        $mail->Body = MsjBody($data,1);
 
         $mail->send();
-        $msj =  " <div class='card shadow-lg p-3 mb-5 bg-white rounded'>
-                <div class='card-body text-center'>
-                    <h5 class='card-title bg-success text-white'>El mail fue enviado</h5>
-                     <h6 class='card-subtitle mb-2 text-muted'>Mensaje de Pueba</h6>
-                    <p class='card-text'>Este es el primer mail de prueba fue enviado con <h3><b>Exito</b></h3></p>
-                </div>
-            </div> ";
+        $exito = true;
     } catch (Exception $e) {
-
-        $msj =
-            "
-        <div class='card shadow-lg p-3 mb-5 bg-white rounded'>
-            <div class='card-body text-center'>
-                <h5 class='card-title bg-success text-white'>PHPMailer</h5>
-                <h6 class='card-subtitle mb-2 text-muted'>Mensaje de Pueba no se pudo enviar</h6>
-                <p class='card-text'>Este es el primer mail de prueba no enviado enviado desde <b>{$mail->ErrorInfo}</b></p>
-            </div>
-        </div>      
-    ";
+    $exito = false;
     }
-
-    return $msj;
+    return $exito;
 }
-
 ?>
