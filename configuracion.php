@@ -7,7 +7,7 @@ include_once("utiles/funciones.php");
 
 
 
-$PROYECTO ='TP_4/PWD_4';
+$PROYECTO ='PWD';
 
 //variable que almacena el directorio del proyecto
 $ROOT =$_SERVER['DOCUMENT_ROOT']."/$PROYECTO/";

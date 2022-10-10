@@ -18,8 +18,8 @@ $listadoPersonas = $objAbmPersona->buscar(null);
 		<div class="text-center">
 			<h4 class="text-center mb-4"><i class="fas fa-user"></i> Listado de Personas:</h4>
 
-			<a href="NuevaPersona.php" class='btn btn-info mx-2'><i class="fas fa-plus mx-2"></i>Cargar nueva persona</a>
-			<a href="BuscarPersona.php" class='btn btn-info mx-2'><i class="fas fa-search mx-2"></i>Buscar persona por DNI</a>
+			<a href="NuevaPersona.php" class='btn btn-info mx-2'><i class="fa-regular fa-plus"></i> Cargar nueva persona</a>
+			<a href="BuscarPersona.php" class='btn btn-info mx-2'><i class="fas fa-magnifying-glass"></i> Buscar persona por DNI</a>
 		</div>
 		<p></p>
 
@@ -51,7 +51,7 @@ $listadoPersonas = $objAbmPersona->buscar(null);
 					echo "<td>" . $objersona->getTelefono() . "</td>";
 					echo "<td>" . $objersona->getDomicilio() . "</td>
 					<td><a href='autosPersona.php?dni=" . $objersona->getNroDni() . "' class='btn btn-warning btn-sm'>
-				<i class='fas fa-eye mx-2'></i>Ver autos</a></td>
+				<i class='fa-regular fa-eye'></i> Ver autos</a></td>
 		</tr>";
 				}
 				echo "</tbody>";

@@ -34,7 +34,7 @@ $('#buscarAuto').bootstrapValidator({
                     message: 'La patente debe llevar 7 caracteres, incluido el espacio. '
                 },
                 regexp: {
-                    regexp: /^[a-z0-9\s]+$/i,
+                    regexp: /^[A-Z]{3}\s[0-9]{3}/,
                     message: 'La patente debe llevar solo números 0-9, letras A-Z y espacios. '
                 } 
             }
@@ -173,7 +173,7 @@ $('#nuevoAuto').bootstrapValidator({
                 message: 'La patente debe llevar solo 6 ó 7 caracteres. '
             },
             regexp: {
-                regexp: /^[a-z0-9\s]+$/i,
+                regexp: /^[A-Z]{3}\s[0-9]{3}/,
                 message: 'La patente debe llevar solo números 0-9 y letras A-Z. '
             } 
         }
@@ -184,9 +184,13 @@ $('#nuevoAuto').bootstrapValidator({
                 message: 'Debe ingresar una marca. '
             },
             stringLength: {
-                min: 2,
-                message: 'La marca debe tener al menos 2 caracteres. '
-            }
+                min: 3,
+                message: 'La marca debe tener al menos 3 caracteres. '
+            },
+            regexp: {
+                regexp: /^[A-Z]/,
+                message: 'Solo mayúsculas. '
+            } 
         }
         },
         Modelo: {
@@ -197,11 +201,15 @@ $('#nuevoAuto').bootstrapValidator({
             digits: {
                 message: 'Solo ingresar números, no texto ni símbolos. '
             },
+            regexp: {
+                regexp: /^[0-9]{4}/,
+                message: 'El modelo debe ser un número de 4 cifras. '
+            },
             between: {
-                min: 1,
-                max: 9999,
-                message: 'Debe ingresar un año entre 1 y 9999. '
-            }
+                min: 1900,
+                max: 2022,
+                message: 'Debe ingresar un año entre 1900 y 2022. '
+            },
         }
         },
         DniDuenio: {
@@ -240,7 +248,7 @@ $('#CambioDuenio').bootstrapValidator({
                 message: 'La patente debe llevar solo 6 ó 7 caracteres. '
             },
             regexp: {
-                regexp: /^[a-z0-9\s]+$/i,
+                regexp: /^[A-Z]{3}\s[0-9]{3}/,
                 message: 'La patente debe llevar solo números 0-9 y letras A-Z. '
             } 
         }

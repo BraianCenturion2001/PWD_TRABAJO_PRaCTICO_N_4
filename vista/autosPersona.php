@@ -44,14 +44,14 @@ if (!empty($datosIng)) {
 	<hr>
 
 	<div class="container p-2">
-		<h4 class="text-center mb-4"><i class="fas fa-car mx-2"></i>Listado de autos según DNI <?= $datosIng['dni'] ?>:</h4>
-		<a href="NuevoAuto.php" class='btn btn-info mx-2'><i class="fas fa-plus mx-2"></i>Cargar nuevo auto</a>
-		<a href="BuscarAuto.php" class='btn btn-info mx-2'><i class="fas fa-search mx-2"></i>Buscar otro auto por Patente</a>
+		<h4 class="text-center mb-4"><i class="fas fa-car"></i> Listado de autos según DNI <?= $datosIng['dni'] ?>:</h4>
+		<a href="NuevoAuto.php" class='btn btn-info mx-2'><i class="fas fa-plus"></i> Cargar nuevo auto</a>
+		<a href="BuscarAuto.php" class='btn btn-info mx-2'><i class="fas fa-search"></i> Buscar otro auto por Patente</a>
 		<p></p>
 		<table class='table table-striped table-hover table-responsive text-center'>
 			<?= $mensaje ?>
 		</table>
-		<a href="ListaPersonas.php" class="btn btn-outline-dark"><i class="fas fa-arrow-left mx-2"></i>Volver a la página anterior.</a>
+		<a href="ListaPersonas.php" class="btn btn-outline-dark"><i class="fas fa-arrow-left"></i> Volver a la página anterior.</a>
 	</div>
 </div>
 

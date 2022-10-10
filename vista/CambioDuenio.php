@@ -9,7 +9,7 @@ include_once("./estructura/cabecera.php") ?>
 	<hr>
 
 	<div class="container p-2">
-		<h4 class="text-center mb-4"><i class="fas fa-people-arrows mx-2"></i>Actualizar DNI de dueño para el vehículo definido por patente:</h4>
+		<h4 class="text-center mb-4"><i class="fa-solid fa-gear"></i> Actualizar DNI de dueño para el vehículo definido por patente:</h4>
 
 		<form name=CambioDuenio id=CambioDuenio method=post action="accionCambioDuenio.php" autocomplete=off novalidate>
 			<div class="form-row">

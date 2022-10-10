@@ -20,9 +20,9 @@ $listadoAutos = $objAbmAuto->buscar(null);
 		<div class="">
 			<h4 class="mb-4"><i class="fas fa-car mx-2"></i>Listado de Autos:</h4>
 
-			<a href="NuevoAuto.php" class='btn btn-info mx-2'><i class="fas fa-plus mx-2"></i>Cargar nuevo auto</a>
-			<a href="BuscarAuto.php" class='btn btn-info mx-2'><i class="fas fa-search mx-2"></i>Buscar auto por Patente</a>
-			<a href="CambioDuenio.php" class='btn btn-info mx-2'><i class="fas fa-people-arrows mx-2"></i>Cambiar dueño de auto</a>
+			<a href="NuevoAuto.php" class='btn btn-info mx-2'><i class="fas fa-plus"></i>  Cargar nuevo auto</a>
+			<a href="BuscarAuto.php" class='btn btn-info mx-2'><i class="fas fa-search"></i>  Buscar auto por Patente</a>
+			<a href="CambioDuenio.php" class='btn btn-info mx-2'><i class="fas fa-people-arrows"></i>  Cambiar dueño de auto</a>
 		</div>
 		<p></p>
 
@@ -37,7 +37,7 @@ $listadoAutos = $objAbmAuto->buscar(null);
 					<th scope=col>Patente</th>
 					<th scope=col>Marca</th>
 					<th scope=col>Modelo</th>
-					<th scope=col>Nombre y apellido</th>
+					<th scope=col>Nombre Dueño</th>
 					<th scope=col>Eliminar</th>
 				</tr>
 			</thead>
@@ -50,8 +50,8 @@ $listadoAutos = $objAbmAuto->buscar(null);
 					echo "<td>" . $objAuto->getMarca() . "</td>";
 					echo "<td>" . $objAuto->getModelo() . "</td>";
 					echo "<td>" . $objDuenio->getNombre() . " " . $objDuenio->getApellido() . "</td>";
-					echo "<td><a href='accionEliminarAuto.php?patente=" . $objAuto->getPatente() . "' class='btn btn-danger btn-sm'>
-			<i class='fas fa-minus mx-2'></i></a></td>
+					echo "<td><a href='accionEliminarAuto.php?patente=" . $objAuto->getPatente() . "' class='btn btn-danger btn-sm'> 
+			<i class='fa-solid fa-trash mx-2'></i> </a></td>
 			</tr>";
 				}
 				echo "</tbody>";

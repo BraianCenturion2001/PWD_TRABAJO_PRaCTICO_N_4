@@ -34,11 +34,11 @@ include_once("./estructura/cabecera.php") ?>
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for=Modelo class="form-label">Modelo:</label>
-					<input class="form-control" name=Modelo id=Modelo type="number" maxlength="5">
+					<input class="form-control" name=Modelo id=Modelo type=number maxlength=4>
 				</div>
 				<div class="form-group col-md-6">
 					<label for=DniDuenio class="form-label">DNI del dueño:</label>
-					<input class="form-control" name=DniDuenio id=DniDuenio type=number maxlength="8" placeholder="12345678">
+					<input class="form-control" name=DniDuenio id=DniDuenio type=number maxlength=8 placeholder="12345678">
 				</div>
 			</div>
 			<div class="form-group row">
