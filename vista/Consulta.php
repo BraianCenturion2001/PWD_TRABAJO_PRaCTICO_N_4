@@ -11,7 +11,7 @@ include_once('./estructura/cabecera.php');?>
         </div>
     </div>  
     <div class="container-fluid mb-5">
-        <form action="./accionComentario.php" method="post">
+        <form action="./accionComentario.php" method="post" name="Consulta" id="Consulta">
            <div class="row justify-content-center align-items-center g-2">
             <div class="col-md-6 col-sm-12">
                 <div class="mb-3">
@@ -39,20 +39,13 @@ include_once('./estructura/cabecera.php');?>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-8 ">
-                    <label for="motivo" class="form-label"><h4>Motivo</h4></label>
+                    
                     <div class="d-flex justify-content-around bd-highlight ">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="motivo" id="" value="Consulta">
-                        <label class="form-check-label" for="">Consulta</label>
+                        <input hidden checked class="form-check-input" type="radio" name="motivo" id="" value="Consulta">
+                        <label hidden class="form-check-label" for="">Consulta</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="motivo" id="" value="Sugerencia">
-                        <label class="form-check-label" for="">Sugerencia</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="motivo" id="" value="CV">
-                        <label class="form-check-label" for="">Curriculum Vitae</label>
-                    </div>
+                    
                     </div>
                 </div>
                 
