@@ -2,7 +2,10 @@
 
 $GLOBALS['ROOT'] =$_SERVER['DOCUMENT_ROOT']."/TP_4/";
 
+
 include_once("utiles/funciones.php");
+
+
 
 $PROYECTO ='TP_4/PWD_4';
 
