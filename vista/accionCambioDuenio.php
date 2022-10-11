@@ -21,26 +21,26 @@ if (!empty($datosIng)) {
 
             if ($objAbmAuto->modificacion(array("DniDuenio" => $datosIng['DniDuenio'], "Patente" => $datosIng['Patente']))) { //array("DniDuenio" => $datosIng['DniDuenio']
                 $mensaje = "<div class='alert alert-info' role='alert'>
-                    <i class='fas fa-check-circle mx-2'></i> Se registró que ahora "
+                <i class='fa-solid fa-check'></i> Se registró que ahora "
                     . $objPersona[0]->getNombre() . " " . $objPersona[0]->getApellido()
                     . " es el propietario del " . $objAuto[0]->getMarca() . ".</div>";
             } else {
                 $mensaje = "<div class='alert alert-danger' role='alert'>
-                    <i class='fas fa-times-circle mx-2'></i> Hubo un error al modificar el dueño del auto.</div>";
+                <i class='fa-solid fa-xmark'></i> Hubo un error al modificar el dueño del auto.</div>";
             } // Fin if modificacion
         } else {
             $mensaje = "<div class='alert alert-danger' role='alert'>
-                <i class='fas fa-times-circle mx-2'></i> No existe un vehículo registrado con patente "
+            <i class='fa-solid fa-exclamation'></i> No existe un vehículo registrado con patente "
                 . $datosIng['Patente'] . ".</div>";
         } // Fin if empty objAuto
     } else {
         $mensaje = "<div class='alert alert-danger' role='alert'>
-        <i class='fas fa-times-circle mx-2'></i> No existe una persona registrada con DNI "
+        <i class='fa-solid fa-exclamation'></i> No existe una persona registrada con DNI "
             . $datosIng['DniDuenio'] . ".</div>";
     } // Fin if empty objPersona
 } else {
     // Muestra error si directamente no hay datos recibidos:
-    $mensaje =  "<div class='alert alert-danger' role='alert'><i class='fas fa-times-circle mx-2'></i>No se recibieron datos.</div>";
+    $mensaje =  "<div class='alert alert-danger' role='alert'><i class='fa-solid fa-xmark'></i> No se recibieron datos.</div>";
 } ?>
 <div class="container-sm p-4">
     <div class="container text-center">

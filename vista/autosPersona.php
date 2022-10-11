@@ -43,8 +43,8 @@ if (!empty($datosIng)) {
 	</div>
 	<hr>
 
-		<a href="NuevoAuto.php" class='btn btn-info mx-2'><i class="fas fa-plus"></i> Cargar nuevo auto</a>
-		<a href="BuscarAuto.php" class='btn btn-info mx-2'><i class="fas fa-search"></i> Buscar otro auto por Patente</a>
+		<a href="NuevoAuto.php" class='btn btn-outline-info mx-2'><i class="fas fa-plus"></i> Cargar nuevo auto</a>
+		<a href="BuscarAuto.php" class='btn btn-outline-info mx-2'><i class="fas fa-search"></i> Buscar otro auto por Patente</a>
 		<p></p>
 		<table class='table table-striped table-hover table-responsive text-center'>
 			<?= $mensaje ?>

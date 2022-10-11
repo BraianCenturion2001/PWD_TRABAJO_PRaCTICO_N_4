@@ -5,9 +5,9 @@
     <title><?php echo $Titulo ?></title>
     <meta charset="utf-8">
     <!-- BOOTSTRAP -->
-    <link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/bootstrap/bootstrapValidator.min.css">
-    <!-- CSS -->
+    <link rel="stylesheet" href="../utiles/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../utiles/bootstrap/css/bootstrapValidator.min.css">
+    <!-- CSS PROPIO -->
     <link rel="stylesheet" href="./css/general.css">
     <!-- Iconos Libreria -->
     <script src="../utiles/Iconos/FontAwesomeKit.js"></script>

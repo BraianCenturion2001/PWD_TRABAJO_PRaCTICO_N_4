@@ -14,9 +14,9 @@ $listadoAutos = $objAbmAuto->buscar(null);
 	<hr>
 
 	<div class="m-3">
-		<a href="NuevoAuto.php" class='btn btn-info mx-2'><i class="fas fa-plus"></i> Cargar nuevo auto</a>
-		<a href="BuscarAuto.php" class='btn btn-info mx-2'><i class="fas fa-search"></i> Buscar auto por Patente</a>
-		<a href="CambioDuenio.php" class='btn btn-info mx-2'><i class="fas fa-people-arrows"></i> Cambiar dueño de auto</a>
+		<a href="NuevoAuto.php" class='btn btn-outline-info mx-2'><i class="fas fa-plus"></i> Cargar nuevo auto</a>
+		<a href="BuscarAuto.php" class='btn btn-outline-info mx-2'><i class="fas fa-search"></i> Buscar auto por Patente</a>
+		<a href="CambioDuenio.php" class='btn btn-outline-info mx-2'><i class="fas fa-people-arrows"></i> Cambiar dueño de auto</a>
 	</div>
 
 	<table class='table table-striped table-hover table-responsive text-center'>
@@ -42,7 +42,7 @@ $listadoAutos = $objAbmAuto->buscar(null);
 				echo "<td>" . $objAuto->getMarca() . "</td>";
 				echo "<td>" . $objAuto->getModelo() . "</td>";
 				echo "<td>" . $objDuenio->getNombre() . " " . $objDuenio->getApellido() . "</td>";
-				echo "<td><a href='accionEliminarAuto.php?patente=" . $objAuto->getPatente() . "' class='btn btn-danger btn-sm'> 
+				echo "<td><a href='accionEliminarAuto.php?patente=" . $objAuto->getPatente() . "' class='btn btn-outline-danger btn-sm'> 
 			<i class='fa-solid fa-trash mx-2'></i> </a></td>
 			</tr>";
 			}

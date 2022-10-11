@@ -21,52 +21,38 @@ $objAbmPersona = new AbmPersona();
 
 			if (!empty($objPersona)) {
 				// Muestra el formulario con los datos de la BD para modificarlos:
-				echo "<form name=ActualizarPersona id=ActualizarPersona method=post action=ActualizarDatosPersona.php autocomplete=off novalidate>
-			<div class='form-group row'>
-				<label for=NroDni class='col-md-2 col-form-label'>Número de DNI:</label> 
-				<div class='col-md-4'>
-					<input class=form-control name=NroDni id=NroDni type=number maxlength=10 value='" . $objPersona[0]->getNroDni() . "' readonly>
-				</div>
-			</div>
-			<div class='form-group row'>
-				<label for=Apellido class='col-md-2 col-form-label'>Apellido:</label> 
-				<div class=col-md-4>
-					<input class=form-control name=Apellido id=Apellido type=text value='" . $objPersona[0]->getApellido() . "'>
-				</div>
-			</div>
-			<div class='form-group row'>
-				<label for=Nombre class='col-md-2 col-form-label'>Nombre:</label> 
-				<div class=col-md-4>
-					<input class=form-control name=Nombre id=Nombre type=text value='" . $objPersona[0]->getNombre() . "'>
-				</div>
-			</div>
-			<div class='form-group row'>
-				<label for=fechaNac class='col-md-2 col-form-label'>Fecha de Nacimiento:</label>
-				<div class=col-md-4>
-					<input class=form-control name=fechaNac id=fechaNac type=date placeholder='DD/MM/YYYY' value='" . $objPersona[0]->getfechaNac() . "'>
-				</div>
-			</div>
-			<div class='form-group row'>
-				<label for=Telefono class='col-md-2 col-form-label'>Teléfono:</label> 
-				<div class=col-md-4>
-					<input class=form-control name=Telefono id=Telefono type=text placeholder='2991115555' value='" . $objPersona[0]->getTelefono() . "'>
-				</div>
-			</div>
-			<div class='form-group row'>
-				<label for=Domicilio class='col-md-2 col-form-label'>Domicilio:</label> 
-				<div class=col-md-4>
-					<input class=form-control name=Domicilio id=Domicilio type=text value='" . $objPersona[0]->getDomicilio() . "'>
-				</div>
-			</div>
-			<div class='form-group row'>
-				<label for=cargar class='col-md-2 col-form-label'></label> 
-				<div class=col-md-4>
-					<input type=submit value='Actualizar datos' class='btn btn-info'>
-				</div>
-			</div>
-		</form>";
+				echo "<form name=ActualizarPersona id=ActualizarPersona method=post action=ActualizarDatosPersona.php class='row g-3' autocomplete=off novalidate>
+			
+					<div class='form-group col-md-6'>
+						<label for=NroDni class='form-label'>Número de DNI:</label> 
+						<input class='form-control border-danger' name=NroDni id=NroDni type=number maxlength=10 value='" . $objPersona[0]->getNroDni() . "' readonly>
+					</div>
+					<div class='form-group col-md-6'>
+						<label for=Apellido class='form-label'>Apellido:</label> 
+						<input class=form-control name=Apellido id=Apellido type=text value='" . $objPersona[0]->getApellido() . "'>
+					</div>
+					<div class='form-group col-md-6'>
+						<label for=Nombre class='form-label'>Nombre:</label> 
+						<input class=form-control name=Nombre id=Nombre type=text value='" . $objPersona[0]->getNombre() . "'>
+					</div>
+					<div class='form-group col-md-6'>
+						<label for=fechaNac class='form-label'>Fecha de Nacimiento:</label>
+						<input class=form-control name=fechaNac id=fechaNac type=date placeholder='DD/MM/YYYY' value='" . $objPersona[0]->getfechaNac() . "'>
+					</div>
+					<div class='form-group col-md-6'>
+						<label for=Telefono class='form-label'>Teléfono:</label> 
+						<input class=form-control name=Telefono id=Telefono type=text placeholder='2991115555' value='" . $objPersona[0]->getTelefono() . "'>
+					</div>
+					<div class='form-group col-md-6'>
+						<label for=Domicilio class='form-label'>Domicilio:</label> 
+						<input class=form-control name=Domicilio id=Domicilio type=text value='" . $objPersona[0]->getDomicilio() . "'>
+					</div> 
+					<div class='form-group col-md-6'>
+						<input type=submit value='Actualizar datos' class='btn btn-outline-success'>
+					</div>
+				</form>";
 			} else {
-				echo "<div class='alert alert-info' role='alert'><i class='fas fa-times-circle mx-2'></i> No se encontró la persona con DNI " . $datosIng['dni'] . ".</div>";
+				echo "<div class='alert alert-info' role='alert'><i class='fa-solid fa-question'></i> No se encontró la persona con DNI " . $datosIng['dni'] . ".</div>";
 			}
 		} else {
 			// Muestra error si no hay datos recibidos:

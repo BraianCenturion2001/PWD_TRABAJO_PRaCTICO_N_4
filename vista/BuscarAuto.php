@@ -15,7 +15,7 @@ include_once("./estructura/cabecera.php") ?>
 				<input class="form-control" name=Patente id=Patente type=text maxlength=7 placeholder="AAA 111">
 			</div>
 			<div class="col-md-2">
-				<input name=buscar id=buscar type=submit value="Buscar" class="btn btn-info">
+				<input name=buscar id=buscar type=submit value="Buscar" class="btn btn-outline-primary">
 			</div>
 		</div>
 	</form>

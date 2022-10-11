@@ -32,7 +32,7 @@ if (!empty($datosIng)) {
 
         }
     } else {
-        $mensaje = "<div class='alert alert-warning' role='alert'><i class='fa-solid fa-question'></i></i>  No existen datos de la persona con DNI " . $datosIng['DniDuenio']."</div>";
+        $mensaje = "<div class='alert alert-warning' role='alert'><i class='fa-solid fa-question'></i>  No existen datos de la persona con DNI " . $datosIng['DniDuenio']."</div>";
     }
 } else {
     // Muestra error si directamente no hay datos recibidos:

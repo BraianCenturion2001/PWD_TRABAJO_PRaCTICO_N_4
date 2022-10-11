@@ -12,9 +12,9 @@ $listadoPersonas = $objAbmPersona->buscar(null);
 	<hr>
 
 	<div class="m-3">
-		<a href="NuevaPersona.php" class='btn btn-info mx-2'><i class="fa-regular fa-plus"></i> Cargar nueva persona</a>
-		<a href="BuscarPersona.php" class='btn btn-info mx-2'><i class="fas fa-magnifying-glass"></i> Buscar persona por DNI</a>
-		<a href="CambioDuenio.php" class='btn btn-info mx-2'><i class="fas fa-people-arrows"></i> Cambiar dueño de auto</a>
+		<a href="NuevaPersona.php" class='btn btn-outline-info mx-2'><i class="fa-regular fa-plus"></i> Cargar nueva persona</a>
+		<a href="BuscarPersona.php" class='btn btn-outline-info mx-2'><i class="fas fa-magnifying-glass"></i> Buscar persona por DNI</a>
+		<a href="CambioDuenio.php" class='btn btn-outline-info mx-2'><i class="fas fa-people-arrows"></i> Cambiar dueño de auto</a>
 	</div>
 
 	<table class='table table-striped table-hover table-responsive text-center'>
@@ -43,7 +43,7 @@ $listadoPersonas = $objAbmPersona->buscar(null);
 				echo "<td>" . $objersona->getfechaNac() . "</td>";
 				echo "<td>" . $objersona->getTelefono() . "</td>";
 				echo "<td>" . $objersona->getDomicilio() . "</td>
-					<td><a href='autosPersona.php?dni=" . $objersona->getNroDni() . "' class='btn btn-warning btn-sm'>
+					<td><a href='autosPersona.php?dni=" . $objersona->getNroDni() . "' class='btn btn-outline-warning btn-sm'>
 				<i class='fa-regular fa-eye'></i> Ver autos</a></td>
 		</tr>";
 			}
