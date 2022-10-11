@@ -1,7 +1,7 @@
 <?php $Titulo = "Inicio Grupo 1";
 include_once("./estructura/cabecera.php"); ?>
 
-<div class="card p-2 shadow-lg">
+<div class="container-sm p-4 text-center">
 	<div class="row p-2 my-1">
 		<div class="col-3">
 

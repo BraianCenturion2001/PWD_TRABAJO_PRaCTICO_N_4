@@ -1,32 +1,32 @@
 <!-- Comienzo pie -->
 <footer class=container-fluid>
-    <div class="row shadow-lg border rounded badge-dark p-2 my-1 text-center">
-        <div class="col">
+    <div class="row shadow-lg border rounded badge-light p-2 my-1 text-center" style="user-select: none;">
+        <div class="col pt-3">
             <h5>Laureano Luna</h5>
             <p>
                 Legajo FAI-3543<br>
             </p>
         </div>
-        <div class="col">
+        <div class="col pt-3">
             <h5>Jeremias Sappia</h5>
             <p>
                 Legajo FAI-2532<br>
             </p>
         </div>
-        <div class="col">
+        <div class="col pt-3">
             <h5>Braian Centurión</h5>
             <p>
                 Legajo FAI-3001<br>
             </p>
         </div>
-        <div class="col">
+        <div class="col pt-3">
             <h5>Roni Broilo</h5>
             <p>
                 Legajo FAI-1107<br>
             </p>
         </div>
     </div>
-    <div class="row shadow-lg border rounded badge-dark p-2 my-1 text-center">
+    <div class="row shadow-lg border rounded badge-dark p-2 my-1 text-center" style="user-select: none;">
         <div class="col">
             <h4>Programación Web Dinámica - 2022</h4>
             <h3>Universidad Nacional del Comahue</h3>

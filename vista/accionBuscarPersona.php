@@ -4,15 +4,14 @@ include_once("./estructura/cabecera.php");
 // Llama al objeto con métodos para manejar ABM de autos:
 $objAbmPersona = new AbmPersona();
 ?>
-<div class="card p-2 shadow">
-	<div class="p-2 m-auto">
-		<h1 class="display-4">Ejercicio 9 del TP4: Formulario actualizar datos persona</h1>
+<div class="container-sm p-4">
+	<div class="container text-center">
+		<h4 class="text-center mb-4"><i class="fa-solid fa-file-pen"></i> Actualizar los datos de la persona:</h4>
 	</div>
 
 	<hr>
 
 	<div class="container p-2">
-		<h4 class="text-center mb-4"><i class="fas fa-pen mx-2"></i>Actualizar los datos de la persona:</h4>
 		<?php
 		// Lee los datos recibidos:
 		$datosIng = data_submitted();

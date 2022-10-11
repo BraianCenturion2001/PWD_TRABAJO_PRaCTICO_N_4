@@ -37,14 +37,12 @@ if (!empty($datosIng)) {
 	$mensaje =  "<div class='alert alert-danger' role='alert'>No se recibió el DNI del usuario para mostrar este listado.</div>";
 }
 ?>
-<div class="card p-2 shadow-lg">
-	<div class="p-2 m-auto">
-		<h1 class="display-4">Ejercicio 5 del TP4: Ver autos de persona</h1>
+<div class="container-sm p-4">
+	<div class="container text-center">
+		<h4 class="text-center mb-4"><i class="fas fa-car"></i> Listado de autos según DNI <?= $datosIng['dni'] ?>:</h4>
 	</div>
 	<hr>
 
-	<div class="container p-2">
-		<h4 class="text-center mb-4"><i class="fas fa-car"></i> Listado de autos según DNI <?= $datosIng['dni'] ?>:</h4>
 		<a href="NuevoAuto.php" class='btn btn-info mx-2'><i class="fas fa-plus"></i> Cargar nuevo auto</a>
 		<a href="BuscarAuto.php" class='btn btn-info mx-2'><i class="fas fa-search"></i> Buscar otro auto por Patente</a>
 		<p></p>
@@ -52,7 +50,6 @@ if (!empty($datosIng)) {
 			<?= $mensaje ?>
 		</table>
 		<a href="ListaPersonas.php" class="btn btn-outline-dark"><i class="fas fa-arrow-left"></i> Volver a la página anterior.</a>
-	</div>
 </div>
 
 <?php include_once("./estructura/pie.php"); ?>

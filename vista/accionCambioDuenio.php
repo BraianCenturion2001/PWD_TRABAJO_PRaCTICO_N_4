@@ -42,15 +42,13 @@ if (!empty($datosIng)) {
     // Muestra error si directamente no hay datos recibidos:
     $mensaje =  "<div class='alert alert-danger' role='alert'><i class='fas fa-times-circle mx-2'></i>No se recibieron datos.</div>";
 } ?>
-<div class="card p-2 shadow">
-    <div class="p-2 m-auto">
-        <h1 class="display-4">Ejercicio 8 del TP4: Cambio de dueño</h1>
+<div class="container-sm p-4">
+    <div class="container text-center">
+        <h4 class="text-center mb-4"><i class="fas fa-search mx-2"></i>Resultado:</h4>
     </div>
-
     <hr>
 
     <div class="container p-2">
-        <h4 class="text-center mb-4"><i class="fas fa-search mx-2"></i>Resultado:</h4>
         <?= $mensaje ?>
         <hr>
         <a href="CambioDuenio.php" class="btn btn-outline-dark"><i class="fas fa-arrow-left mx-2"></i>Volver a la página anterior.</a>
