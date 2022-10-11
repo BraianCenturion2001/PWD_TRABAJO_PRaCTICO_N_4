@@ -27,7 +27,7 @@ include_once('./estructura/cabecera.php'); ?>
         </div>
         <div class="form-row">
             <div class="col-md-12">
-                <label for="comentario" class="form-label">Comentario</label>
+                <label for="comentario" class="form-label">Consulta: </label>
                 <textarea class="form-control" name="comentario" id="comentario" rows="5"></textarea>
             </div>
         </div>

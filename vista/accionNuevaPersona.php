@@ -11,12 +11,12 @@ if (!empty($datosIng)) {
     // Realiza la operación y muestra el resultado:
     if (empty($pers)) {
         if ($objAbmPersona->alta($datosIng)) {
-            $mensaje = "<div class='alert alert-info' role='alert'><i class='bi bi-check-circle mx-2'></i> Se cargó correctamente la persona.</div>";
+            $mensaje = "<div class='alert alert-info' role='alert'><i class='fa-solid fa-check'></i> Se cargó correctamente la persona.</div>";
         } else {
-            $mensaje = "<div class='alert alert-danger' role='alert'><i class='bi bi-times-circle mx-2'></i> Hubo un error al cargar la persona.</div>";
+            $mensaje = "<div class='alert alert-danger' role='alert'><i class='fa-solid fa-xmark'></i> Hubo un error al cargar la persona.</div>";
         }
     }else{
-        $mensaje = "<div class='alert alert-danger' role='alert'><i class='bi bi-times-circle mx-2'></i> Ya hay una persona cargada con el <b>numero dni ".$datosIng['NroDni']."</b><button class='btn btn-outline-success ml-4'><a href='accionBuscarPersona.php?dni=".$datosIng['NroDni']."' style='color:black'>Ver Persona</a></button></div>";
+        $mensaje = "<div class='alert alert-danger' role='alert'><i class='fa-solid fa-exclamation'></i> Ya hay una persona cargada con el <b>numero dni ".$datosIng['NroDni']."</b><button class='btn btn-outline-success ml-4'><a href='accionBuscarPersona.php?dni=".$datosIng['NroDni']."' style='color:black'>Ver Persona</a></button></div>";
     }
 } else {
     // Muestra error si directamente no hay datos recibidos:

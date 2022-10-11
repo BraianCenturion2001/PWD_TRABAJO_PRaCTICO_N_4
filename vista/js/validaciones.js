@@ -271,6 +271,60 @@ $('#CambioDuenio').bootstrapValidator({
 });
 
 
+$('#Consulta').bootstrapValidator({
+    feedbackIcons: {
+        valid: 'fas fa-check',
+        invalid: 'fas fa-times',
+        validating: 'fas fa-refresh'
+    },
+    fields:{
+        nombre: {
+            validators: {
+                notEmpty: {
+                    message: 'Debe ingresar un nombre. '
+                },
+                stringLength: {
+                    min: 3,
+                    message: 'El nombre debe tener al menos 3 caracteres. '
+                },
+                regexp: {
+                    regexp: /^[a-zA-ZñáéíóúüÁÉÍÓÚÜÑ\s]+$/,
+                    message: 'El nombre solo debe llevar letras. '
+                } 
+            }
+        },
+        apellido: {
+            validators: {
+                notEmpty: {
+                    message: 'Debe ingresar un apellido. '
+                },
+                stringLength: {
+                    min: 3,
+                    message: 'El apellido debe tener al menos 3 caracteres. '
+                },
+                regexp: {
+                    regexp: /^[a-zA-ZñáéíóúüÁÉÍÓÚÜÑ\s]+$/,
+                    message: 'El apellido solo debe llevar letras. '
+                } 
+            }
+        },
+        email:{
+            validators: {
+                notEmpty: {
+                    message: 'Debe ingresar su correo. '
+                }
+            }
+        },
+        comentario:{
+            validators: {
+                notEmpty: {
+                    message: 'Debe ingresar una consulta. '
+                }
+            }
+        }
+    }
+})
+
 
 //
 //  ⢀⡴⠑⡄⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
