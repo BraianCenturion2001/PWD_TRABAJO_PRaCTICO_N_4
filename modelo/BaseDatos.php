@@ -13,7 +13,7 @@ private $resultado;
 public function __construct() {
     $this->engine = 'mysql';
     //XAMMP, DESCOMENTAR SEGÚN SI SOS JERE O NO
-    //$this->host = '127.0.0.1:3307';
+    $this->host = '127.0.0.1:3307';
     //$this->host = '127.0.0.1:3306';
     $this->database = 'infoautos'; // MODIFICAR POR CADA TP
     $this->user = 'root';
