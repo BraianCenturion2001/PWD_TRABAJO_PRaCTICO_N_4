@@ -30,6 +30,9 @@ include_once('./estructura/cabecera.php'); ?>
         <div class="col-md-6">
             <input type=submit value="Enviar" class="btn btn-outline-success">
         </div>
+        <div class="form-group">
+            <input hidden checked class="form-check-input" type="radio" name="motivo" id="motivo" value="Consulta">
+        </div>
     </form>
 </div>
 

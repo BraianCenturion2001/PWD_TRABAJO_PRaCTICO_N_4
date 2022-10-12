@@ -20,6 +20,9 @@ include_once("./estructura/cabecera.php") ?>
 		<div class="col-md-6">
 			<input name=buscar id=buscar type=submit value="Buscar" class="btn btn-outline-info">
 		</div>
+		<div class="form-group">
+            <input hidden checked class="form-check-input" type="radio" name="motivo" id="motivo" value="CambioDueño">
+        </div>
 	</form>
 
 </div>
