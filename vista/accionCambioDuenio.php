@@ -10,7 +10,7 @@ $objAbmPersona = new AbmPersona();
 $objAbmAuto = new AbmAuto();
 // Lee los datos recibidos:
 $datosIng = data_submitted();
-print_r($datosIng);
+
 if (!empty($datosIng) && EnviarMail($datosIng)) {
     // Busca si se encuentra la persona según DNI:
     $objPersona = $objAbmPersona->buscar(array("NroDni" => $datosIng['DniDuenio']));
