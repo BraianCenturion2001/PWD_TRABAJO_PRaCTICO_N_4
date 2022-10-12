@@ -1,14 +1,5 @@
-
-a.enlaces:link{
-    color:gray;
-}
-
-a.enlaces:hover{
-    color:black;
-}
-
-a.enlaces:visited{
-    color:darkslategray;
+a{
+    text-decoration: none;
 }
 
 /* COLORES VALIDACIONES */
