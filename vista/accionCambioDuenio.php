@@ -11,7 +11,7 @@ $objAbmAuto = new AbmAuto();
 // Lee los datos recibidos:
 $datosIng = data_submitted();
 
-if (!empty($datosIng) && EnviarMail($datosIng)) {
+if (!empty($datosIng)) {
     // Busca si se encuentra la persona según DNI:
     $objPersona = $objAbmPersona->buscar(array("NroDni" => $datosIng['DniDuenio']));
 
@@ -23,7 +23,7 @@ if (!empty($datosIng) && EnviarMail($datosIng)) {
         if (!empty($objAuto)) {
             // Realiza la carga del nuevo auto, y muestra el resultado:            
 
-            if ($objAbmAuto->modificacion(array("DniDuenio" => $datosIng['DniDuenio'], "Patente" => $datosIng['Patente']))) { //array("DniDuenio" => $datosIng['DniDuenio']
+            if ($objAbmAuto->modificacion(array("DniDuenio" => $datosIng['DniDuenio'], "Patente" => $datosIng['Patente'])) && EnviarMail($datosIng)) { //array("DniDuenio" => $datosIng['DniDuenio']
                 $mensaje = "<div class='alert alert-info' role='alert'>
                 <i class='fa-solid fa-check'></i> Se registró que ahora "
                     . $objPersona[0]->getNombre() . " " . $objPersona[0]->getApellido()

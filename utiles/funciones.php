@@ -279,7 +279,7 @@ function mailCambio($data)
         $mail->Port = 465;
 
         $mail->setFrom('Autos.phpmailer@gmail.com', 'Administrador');
-        $mail->addAddress('jeremiassappia@gmail.com', 'Jere');
+        $mail->addAddress('lunalaureanoluna@gmail.com', 'Jere');
         //$mail->addCC('lunalaureanoluna@gmail.com');Autos.phpmailer@gmail.com
 
         $mail->isHTML(true);
